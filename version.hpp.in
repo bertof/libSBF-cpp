@@ -1,0 +1,45 @@
+/* -*- Mode:C++; c-file-style:"gnu"; indent-tabs-mode:nil; -*- */
+
+#ifndef SBF_VERSION_HPP
+#define SBF_VERSION_HPP
+
+namespace sbf {
+
+/** \brief sbf version represented as an integer
+ *
+ *  MAJOR*1000000 + MINOR*1000 + PATCH
+ */
+#define SBF_VERSION @VERSION@
+
+/** \brief sbf version represented as a string
+ *
+ *  MAJOR.MINOR.PATCH
+ */
+#define SBF_VERSION_STRING "@VERSION_STRING@"
+
+/** \brief sbf version string, including git commit information, if sbf is build from
+ *         specific git commit
+ *
+ * SBF_VERSION_BUILD_STRING is obtained using the following command (`sbf-` prefix is
+ * afterwards removed):
+ *
+ *    `git describe --match 'sbf-*'`
+ *
+ * When sbf is built not from git, SBF_VERSION_BUILD_STRING equals SBF_VERSION_STRING
+ *
+ * MAJOR.MINOR.PATCH(-release-candidate-tag)(-(number-of-commits-since-tag)-COMMIT-HASH)
+ *
+ * Example, 0.1.0-rc1-1-g5c86570
+ */
+#define SBF_VERSION_BUILD_STRING "@VERSION_BUILD@"
+
+/// MAJOR version
+#define SBF_VERSION_MAJOR @VERSION_MAJOR@
+/// MINOR version
+#define SBF_VERSION_MINOR @VERSION_MINOR@
+/// PATCH version
+#define SBF_VERSION_PATCH @VERSION_PATCH@
+
+} // namespace sbf
+
+#endif // SBF_VERSION_HPP
